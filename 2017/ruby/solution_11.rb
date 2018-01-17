@@ -1,6 +1,6 @@
 input = File.read('../input/11.txt')
 
-directions = input.split(',');
+directions = input.strip.split(',');
 direction_frequencies = directions.group_by(&:itself).map { |k, v| [k, v.count] }.to_h
 
 def simplify(directions, simplifiable_directions, result_vector = nil)
